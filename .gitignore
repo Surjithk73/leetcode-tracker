@@ -17,6 +17,16 @@ dist-ssr
 .env.*
 !.env.example
 
+# Internal planning/phase docs — not for repo
+AI_*.md
+DATA_*.md
+DEPLOYMENT_*.md
+IMPLEMENTATION_*.md
+PHASE*.md
+QUICKSTART_*.md
+START_DATE_*.md
+SUPABASE_SETUP.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
