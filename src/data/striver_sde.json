@@ -1,0 +1,1721 @@
+[
+  {
+    "id": "striver_0",
+    "title": "Set Matrix Zeroes",
+    "slug": "set-matrix-zeroes",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 0
+  },
+  {
+    "id": "striver_1",
+    "title": "Pascal Triangle",
+    "slug": "pascals-triangle",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 1
+  },
+  {
+    "id": "striver_2",
+    "title": "Next Permutation",
+    "slug": "next-permutation",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 2
+  },
+  {
+    "id": "striver_3",
+    "title": "Kadane's Algorithm",
+    "slug": "maximum-subarray",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 3
+  },
+  {
+    "id": "striver_4",
+    "title": "Sort an array of 0's 1's and 2's",
+    "slug": "sort-colors",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 4
+  },
+  {
+    "id": "striver_5",
+    "title": "Stock Buy and Sell",
+    "slug": "best-time-to-buy-and-sell-stock",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 5
+  },
+  {
+    "id": "striver_6",
+    "title": "Rotate Matrix",
+    "slug": "rotate-image",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 6
+  },
+  {
+    "id": "striver_7",
+    "title": "Merge Overlapping Subintervals",
+    "slug": "merge-intervals",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 7
+  },
+  {
+    "id": "striver_8",
+    "title": "Merge two sorted Arrays without extra space",
+    "slug": "merge-sorted-array",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 8
+  },
+  {
+    "id": "striver_9",
+    "title": "Find the duplicate",
+    "slug": "find-the-duplicate-number",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 9
+  },
+  {
+    "id": "striver_10",
+    "title": "Repeat and Missing Number",
+    "slug": "",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 10
+  },
+  {
+    "id": "striver_11",
+    "title": "Inversion of Array",
+    "slug": "",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 11
+  },
+  {
+    "id": "striver_12",
+    "title": "Search in a 2D Matrix",
+    "slug": "search-a-2d-matrix",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 12
+  },
+  {
+    "id": "striver_13",
+    "title": "Pow(X,N)",
+    "slug": "powx-n",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 13
+  },
+  {
+    "id": "striver_14",
+    "title": "Majority Element( greater than N/2 times )",
+    "slug": "majority-element",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 14
+  },
+  {
+    "id": "striver_15",
+    "title": "Majority Element( greater than N/3 times )",
+    "slug": "majority-element-ii",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 15
+  },
+  {
+    "id": "striver_16",
+    "title": "Grid Unique Paths",
+    "slug": "unique-paths",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 16
+  },
+  {
+    "id": "striver_17",
+    "title": "Reverse Pairs",
+    "slug": "reverse-pairs",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 17
+  },
+  {
+    "id": "striver_18",
+    "title": "2 Sum ",
+    "slug": "two-sum",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 18
+  },
+  {
+    "id": "striver_19",
+    "title": "4 Sum",
+    "slug": "4sum",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 19
+  },
+  {
+    "id": "striver_20",
+    "title": "Longest Consecutive Sequence",
+    "slug": "longest-consecutive-sequence",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 20
+  },
+  {
+    "id": "striver_21",
+    "title": "Longest subarray with 0 sum",
+    "slug": "",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 21
+  },
+  {
+    "id": "striver_22",
+    "title": "Count number of subarrays with given XOR",
+    "slug": "",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 22
+  },
+  {
+    "id": "striver_23",
+    "title": "Longest substring without repeating characters",
+    "slug": "longest-substring-without-repeating-characters",
+    "topic": "Arrays",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 23
+  },
+  {
+    "id": "striver_24",
+    "title": "Reverse a linked list",
+    "slug": "reverse-linked-list",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 24
+  },
+  {
+    "id": "striver_25",
+    "title": "Find the middle of linked list",
+    "slug": "middle-of-the-linked-list",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 25
+  },
+  {
+    "id": "striver_26",
+    "title": "Merge two sorted linked list",
+    "slug": "merge-two-sorted-lists",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 26
+  },
+  {
+    "id": "striver_27",
+    "title": "Remove Nth node from the back of linked list",
+    "slug": "remove-nth-node-from-end-of-list",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 27
+  },
+  {
+    "id": "striver_28",
+    "title": "Add two numbers as linked list",
+    "slug": "add-two-numbers",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 28
+  },
+  {
+    "id": "striver_29",
+    "title": "Delete a given node when head is not known",
+    "slug": "delete-node-in-a-linked-list",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 29
+  },
+  {
+    "id": "striver_30",
+    "title": "Find intersection of Y linked list",
+    "slug": "intersection-of-two-linked-lists",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 30
+  },
+  {
+    "id": "striver_31",
+    "title": "Detect a cycle in linked list",
+    "slug": "linked-list-cycle",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 31
+  },
+  {
+    "id": "striver_32",
+    "title": "Reverse a linked list in groups of size K",
+    "slug": "reverse-nodes-in-k-group",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 32
+  },
+  {
+    "id": "striver_33",
+    "title": "Check if linked list is palindrome",
+    "slug": "palindrome-linked-list",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 33
+  },
+  {
+    "id": "striver_34",
+    "title": "Find starting point of the loop of linked list",
+    "slug": "linked-list-cycle-ii",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 34
+  },
+  {
+    "id": "striver_35",
+    "title": "Flattening of a linked list",
+    "slug": "",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 35
+  },
+  {
+    "id": "striver_36",
+    "title": "Rotate a linked list",
+    "slug": "rotate-list",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 36
+  },
+  {
+    "id": "striver_37",
+    "title": "Clone a linked list with next and random pointer",
+    "slug": "copy-list-with-random-pointer",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 37
+  },
+  {
+    "id": "striver_38",
+    "title": "3 sum",
+    "slug": "3sum",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 38
+  },
+  {
+    "id": "striver_39",
+    "title": "Trapping Rainwater",
+    "slug": "trapping-rain-water",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 39
+  },
+  {
+    "id": "striver_40",
+    "title": "Remove duplicate from soretd array",
+    "slug": "remove-duplicates-from-sorted-array",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 40
+  },
+  {
+    "id": "striver_41",
+    "title": "Max consecutive ones",
+    "slug": "max-consecutive-ones",
+    "topic": "Linked Lists",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 41
+  },
+  {
+    "id": "striver_42",
+    "title": "N meetings in one room",
+    "slug": "",
+    "topic": "Greedy",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 42
+  },
+  {
+    "id": "striver_43",
+    "title": "Minimum number of platforms required for a railway",
+    "slug": "",
+    "topic": "Greedy",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 43
+  },
+  {
+    "id": "striver_44",
+    "title": "Job sequencing Problem",
+    "slug": "",
+    "topic": "Greedy",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 44
+  },
+  {
+    "id": "striver_45",
+    "title": "Fractional Knapsack Problem",
+    "slug": "",
+    "topic": "Greedy",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 45
+  },
+  {
+    "id": "striver_46",
+    "title": "Greedy algorithm to find minimum number of coins",
+    "slug": "",
+    "topic": "Greedy",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 46
+  },
+  {
+    "id": "striver_47",
+    "title": "Activity Selection (it is the same as N meeting in one room)",
+    "slug": "",
+    "topic": "Greedy",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 47
+  },
+  {
+    "id": "striver_48",
+    "title": "Subset Sums",
+    "slug": "",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 48
+  },
+  {
+    "id": "striver_49",
+    "title": "Subset-II",
+    "slug": "subsets-ii",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 49
+  },
+  {
+    "id": "striver_50",
+    "title": "Combination sum-1",
+    "slug": "combination-sum",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 50
+  },
+  {
+    "id": "striver_51",
+    "title": "Combination sum-2",
+    "slug": "combination-sum-ii",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 51
+  },
+  {
+    "id": "striver_52",
+    "title": "Palindrome Partitioning",
+    "slug": "palindrome-partitioning",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 52
+  },
+  {
+    "id": "striver_53",
+    "title": "K-th permutation Sequence",
+    "slug": "permutation-sequence",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 53
+  },
+  {
+    "id": "striver_54",
+    "title": "Print all permutations of a string/array",
+    "slug": "permutations",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 54
+  },
+  {
+    "id": "striver_55",
+    "title": "N queens Problem",
+    "slug": "n-queens",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 55
+  },
+  {
+    "id": "striver_56",
+    "title": "Sudoku Solver",
+    "slug": "sudoku-solver",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 56
+  },
+  {
+    "id": "striver_57",
+    "title": "M coloring Problem",
+    "slug": "",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 57
+  },
+  {
+    "id": "striver_58",
+    "title": "Rat in a Maze",
+    "slug": "",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 58
+  },
+  {
+    "id": "striver_59",
+    "title": "Word Break (print all ways)",
+    "slug": "",
+    "topic": "Backtracking",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 59
+  },
+  {
+    "id": "striver_60",
+    "title": "The N-th root of an integer",
+    "slug": "",
+    "topic": "Binary Search",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 60
+  },
+  {
+    "id": "striver_61",
+    "title": "Matrix Median",
+    "slug": "",
+    "topic": "Binary Search",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 61
+  },
+  {
+    "id": "striver_62",
+    "title": "Single element in a sorted array ",
+    "slug": "single-element-in-a-sorted-array",
+    "topic": "Binary Search",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 62
+  },
+  {
+    "id": "striver_63",
+    "title": "Search element in a sorted and rotated array/ find pivot where it is rotated",
+    "slug": "search-in-rotated-sorted-array",
+    "topic": "Binary Search",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 63
+  },
+  {
+    "id": "striver_64",
+    "title": "Median of 2 sorted arrays",
+    "slug": "median-of-two-sorted-arrays",
+    "topic": "Binary Search",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 64
+  },
+  {
+    "id": "striver_65",
+    "title": "K-th element of two sorted arrays",
+    "slug": "",
+    "topic": "Binary Search",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 65
+  },
+  {
+    "id": "striver_66",
+    "title": "Allocate Minimum Number of Pages",
+    "slug": "",
+    "topic": "Binary Search",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 66
+  },
+  {
+    "id": "striver_67",
+    "title": "Aggressive Cows",
+    "slug": "",
+    "topic": "Binary Search",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 67
+  },
+  {
+    "id": "striver_68",
+    "title": "Max heap, Min Heap Implementation",
+    "slug": "",
+    "topic": "Heaps",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 68
+  },
+  {
+    "id": "striver_69",
+    "title": "Kth Largest Element",
+    "slug": "kth-largest-element-in-an-array",
+    "topic": "Heaps",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 69
+  },
+  {
+    "id": "striver_70",
+    "title": "Maximum Sum Combination",
+    "slug": "",
+    "topic": "Heaps",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 70
+  },
+  {
+    "id": "striver_71",
+    "title": "Find Median from Data Stream",
+    "slug": "find-median-from-data-stream",
+    "topic": "Heaps",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 71
+  },
+  {
+    "id": "striver_72",
+    "title": "Merge K sorted arrays",
+    "slug": "",
+    "topic": "Heaps",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 72
+  },
+  {
+    "id": "striver_73",
+    "title": "K most frequent elements",
+    "slug": "top-k-frequent-elements",
+    "topic": "Heaps",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 73
+  },
+  {
+    "id": "striver_74",
+    "title": "Implement Stack Using Arrays",
+    "slug": "",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 74
+  },
+  {
+    "id": "striver_75",
+    "title": "Implement Queue Using Arrays",
+    "slug": "",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 75
+  },
+  {
+    "id": "striver_76",
+    "title": "Implement Stack using Queue (using single queue)",
+    "slug": "implement-stack-using-queues",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 76
+  },
+  {
+    "id": "striver_77",
+    "title": "Implement Queue using Stack (0(1) amortized method)",
+    "slug": "implement-queue-using-stacks",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 77
+  },
+  {
+    "id": "striver_78",
+    "title": "Check for balanced parentheses",
+    "slug": "valid-parentheses",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 78
+  },
+  {
+    "id": "striver_79",
+    "title": "Next Greater Element",
+    "slug": "next-greater-element-i",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 79
+  },
+  {
+    "id": "striver_80",
+    "title": "Sort a Stack",
+    "slug": "",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 80
+  },
+  {
+    "id": "striver_81",
+    "title": "Next Smaller Element",
+    "slug": "",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 81
+  },
+  {
+    "id": "striver_82",
+    "title": "LRU cache",
+    "slug": "lru-cache",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 82
+  },
+  {
+    "id": "striver_83",
+    "title": "LFU Cache",
+    "slug": "lfu-cache",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 83
+  },
+  {
+    "id": "striver_84",
+    "title": "Largest rectangle in a histogram",
+    "slug": "largest-rectangle-in-histogram",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 84
+  },
+  {
+    "id": "striver_85",
+    "title": "Sliding Window maximum",
+    "slug": "sliding-window-maximum",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 85
+  },
+  {
+    "id": "striver_86",
+    "title": "Implement Min Stack",
+    "slug": "min-stack",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 86
+  },
+  {
+    "id": "striver_87",
+    "title": "Rotten Orange (Using BFS)",
+    "slug": "rotting-oranges",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 87
+  },
+  {
+    "id": "striver_88",
+    "title": "Stock Span Problem",
+    "slug": "online-stock-span",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 88
+  },
+  {
+    "id": "striver_89",
+    "title": "Find the maximum of minimums of every window size",
+    "slug": "",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 89
+  },
+  {
+    "id": "striver_90",
+    "title": "The Celebrity Problem",
+    "slug": "",
+    "topic": "Stacks",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 90
+  },
+  {
+    "id": "striver_91",
+    "title": "Reverse Words in a String",
+    "slug": "reverse-words-in-a-string",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 91
+  },
+  {
+    "id": "striver_92",
+    "title": "Longest Palindrome in a string",
+    "slug": "longest-palindromic-substring",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 92
+  },
+  {
+    "id": "striver_93",
+    "title": "Roman Number to Integer and vice versa",
+    "slug": "roman-to-integer",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 93
+  },
+  {
+    "id": "striver_94",
+    "title": "Implement ATOI/STRSTR",
+    "slug": "string-to-integer-atoi",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 94
+  },
+  {
+    "id": "striver_95",
+    "title": "Longest Common Prefix",
+    "slug": "longest-common-prefix",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 95
+  },
+  {
+    "id": "striver_96",
+    "title": "Rabin Karp",
+    "slug": "",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 96
+  },
+  {
+    "id": "striver_97",
+    "title": "Z-Function",
+    "slug": "implement-strstr",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 97
+  },
+  {
+    "id": "striver_98",
+    "title": "KMP algo / LPS(pi) array",
+    "slug": "",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 98
+  },
+  {
+    "id": "striver_99",
+    "title": "Minimum characters needed to be inserted in the beginning to make it palindromic",
+    "slug": "",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 99
+  },
+  {
+    "id": "striver_100",
+    "title": "Check for Anagrams",
+    "slug": "valid-anagram",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 100
+  },
+  {
+    "id": "striver_101",
+    "title": "Count and Say",
+    "slug": "count-and-say",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 101
+  },
+  {
+    "id": "striver_102",
+    "title": "Compare version numbers",
+    "slug": "compare-version-numbers",
+    "topic": "Strings",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 102
+  },
+  {
+    "id": "striver_103",
+    "title": "Inorder Traversal",
+    "slug": "binary-tree-inorder-traversal",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 103
+  },
+  {
+    "id": "striver_104",
+    "title": "Preorder Traversal",
+    "slug": "binary-tree-preorder-traversal",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 104
+  },
+  {
+    "id": "striver_105",
+    "title": "Postorder Traversal",
+    "slug": "binary-tree-postorder-traversal",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 105
+  },
+  {
+    "id": "striver_106",
+    "title": "Morris Inorder Traversal",
+    "slug": "binary-tree-inorder-traversal",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 106
+  },
+  {
+    "id": "striver_107",
+    "title": "Morris Preorder Traversal",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 107
+  },
+  {
+    "id": "striver_108",
+    "title": "Leftview Of Binary Tree",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 108
+  },
+  {
+    "id": "striver_109",
+    "title": "Bottom View of Binary Tree",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 109
+  },
+  {
+    "id": "striver_110",
+    "title": "Top View of Binary Tree",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 110
+  },
+  {
+    "id": "striver_111",
+    "title": "Preorder inorder postorder in a single traversal",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 111
+  },
+  {
+    "id": "striver_112",
+    "title": "Vertical order traversal",
+    "slug": "vertical-order-traversal-of-a-binary-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 112
+  },
+  {
+    "id": "striver_113",
+    "title": "Root to node path in a Binary Tree",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 113
+  },
+  {
+    "id": "striver_114",
+    "title": "Max width of a Binary Tree",
+    "slug": "maximum-width-of-binary-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 114
+  },
+  {
+    "id": "striver_115",
+    "title": "Level order Traversal / Level order traversal in spiral form",
+    "slug": "binary-tree-level-order-traversal",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 115
+  },
+  {
+    "id": "striver_116",
+    "title": "Height of a Binary Tree",
+    "slug": "maximum-depth-of-binary-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 116
+  },
+  {
+    "id": "striver_117",
+    "title": "Diameter of Binary Tree",
+    "slug": "diameter-of-binary-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 117
+  },
+  {
+    "id": "striver_118",
+    "title": "Check if the Binary tree is height-balanced or not",
+    "slug": "balanced-binary-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 118
+  },
+  {
+    "id": "striver_119",
+    "title": "LCA in Binary Tree",
+    "slug": "lowest-common-ancestor-of-a-binary-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 119
+  },
+  {
+    "id": "striver_120",
+    "title": "Check if two trees are identical or not",
+    "slug": "same-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 120
+  },
+  {
+    "id": "striver_121",
+    "title": "Zig Zag Traversal of Binary Tree",
+    "slug": "binary-tree-zigzag-level-order-traversal",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 121
+  },
+  {
+    "id": "striver_122",
+    "title": "Boundary Traversal of Binary Tree",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 122
+  },
+  {
+    "id": "striver_123",
+    "title": "Maximum path sum",
+    "slug": "binary-tree-maximum-path-sum",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 123
+  },
+  {
+    "id": "striver_124",
+    "title": "Construct Binary Tree from inorder and preorder",
+    "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 124
+  },
+  {
+    "id": "striver_125",
+    "title": "Construct Binary Tree from Inorder and Postorder",
+    "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 125
+  },
+  {
+    "id": "striver_126",
+    "title": "Symmetric Binary Tree",
+    "slug": "symmetric-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 126
+  },
+  {
+    "id": "striver_127",
+    "title": "Flatten Binary Tree to LinkedList",
+    "slug": "flatten-binary-tree-to-linked-list",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 127
+  },
+  {
+    "id": "striver_128",
+    "title": "Check if Binary Tree is the mirror of itself or not",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 128
+  },
+  {
+    "id": "striver_129",
+    "title": "Check for Children Sum Property",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 129
+  },
+  {
+    "id": "striver_130",
+    "title": "Populate Next Right pointers of Tree",
+    "slug": "populating-next-right-pointers-in-each-node",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 130
+  },
+  {
+    "id": "striver_131",
+    "title": "Search given Key in BST",
+    "slug": "search-in-a-binary-search-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 131
+  },
+  {
+    "id": "striver_132",
+    "title": "Construct BST from given keys",
+    "slug": "convert-sorted-array-to-binary-search-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 132
+  },
+  {
+    "id": "striver_133",
+    "title": "Construct BST from preorder traversal",
+    "slug": "construct-binary-search-tree-from-preorder-traversal",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 133
+  },
+  {
+    "id": "striver_134",
+    "title": "Check if a BT is BST or not",
+    "slug": "validate-binary-search-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 134
+  },
+  {
+    "id": "striver_135",
+    "title": "Find LCA of two nodes in BST",
+    "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 135
+  },
+  {
+    "id": "striver_136",
+    "title": "Find the inorder predecessor/successor of a given Key in BST.",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 136
+  },
+  {
+    "id": "striver_137",
+    "title": "Floor in a BST",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 137
+  },
+  {
+    "id": "striver_138",
+    "title": "Ceil in a BST",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 138
+  },
+  {
+    "id": "striver_139",
+    "title": "Find K-th smallest element in BST",
+    "slug": "kth-smallest-element-in-a-bst",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 139
+  },
+  {
+    "id": "striver_140",
+    "title": "Find K-th largest element in BST",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 140
+  },
+  {
+    "id": "striver_141",
+    "title": "Find a pair with a given sum in BST",
+    "slug": "two-sum-iv-input-is-a-bst",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 141
+  },
+  {
+    "id": "striver_142",
+    "title": "BST iterator",
+    "slug": "binary-search-tree-iterator",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 142
+  },
+  {
+    "id": "striver_143",
+    "title": "Size of the largest BST in a Binary Tree",
+    "slug": "maximum-sum-bst-in-binary-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 143
+  },
+  {
+    "id": "striver_144",
+    "title": "Serialize and deserialize Binary Tree",
+    "slug": "serialize-and-deserialize-binary-tree",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 144
+  },
+  {
+    "id": "striver_145",
+    "title": "Binary Tree to Double Linked List",
+    "slug": "flatten-binary-tree-to-linked-list",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 145
+  },
+  {
+    "id": "striver_146",
+    "title": "Find median in a stream of running integers.",
+    "slug": "find-median-from-data-stream",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 146
+  },
+  {
+    "id": "striver_147",
+    "title": "K-th largest element in a stream",
+    "slug": "kth-largest-element-in-a-stream",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 147
+  },
+  {
+    "id": "striver_148",
+    "title": "Distinct numbers in Window.",
+    "slug": "",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 148
+  },
+  {
+    "id": "striver_149",
+    "title": "K-th largest element in an unsorted array.",
+    "slug": "kth-largest-element-in-an-array",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 149
+  },
+  {
+    "id": "striver_150",
+    "title": "Flood-fill Algorithm",
+    "slug": "flood-fill",
+    "topic": "Trees",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 150
+  },
+  {
+    "id": "striver_151",
+    "title": "Clone a graph",
+    "slug": "clone-graph",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 151
+  },
+  {
+    "id": "striver_152",
+    "title": "DFS",
+    "slug": "",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 152
+  },
+  {
+    "id": "striver_153",
+    "title": "BFS",
+    "slug": "",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 153
+  },
+  {
+    "id": "striver_154",
+    "title": "Detect A cycle in Undirected Graph using BFS",
+    "slug": "course-schedule",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 154
+  },
+  {
+    "id": "striver_155",
+    "title": "Detect A cycle in Undirected Graph using DFS",
+    "slug": "course-schedule",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 155
+  },
+  {
+    "id": "striver_156",
+    "title": "Detect A cycle in a Directed Graph using DFS",
+    "slug": "course-schedule",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 156
+  },
+  {
+    "id": "striver_157",
+    "title": "Detect A cycle in a Directed Graph using BFS",
+    "slug": "course-schedule",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 157
+  },
+  {
+    "id": "striver_158",
+    "title": "Topological Sort BFS",
+    "slug": "",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 158
+  },
+  {
+    "id": "striver_159",
+    "title": "Topological Sort DFS",
+    "slug": "",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 159
+  },
+  {
+    "id": "striver_160",
+    "title": "Number of islands",
+    "slug": "number-of-islands",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 160
+  },
+  {
+    "id": "striver_161",
+    "title": "Bipartite Check using BFS",
+    "slug": "is-graph-bipartite",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 161
+  },
+  {
+    "id": "striver_162",
+    "title": "Bipartite Check using DFS",
+    "slug": "is-graph-bipartite",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 162
+  },
+  {
+    "id": "striver_163",
+    "title": "Strongly Connected Component(using KosaRaju's algo)",
+    "slug": "maximum-number-of-non-overlapping-substrings",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 163
+  },
+  {
+    "id": "striver_164",
+    "title": "Dijkstra’s Algorithm",
+    "slug": "",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 164
+  },
+  {
+    "id": "striver_165",
+    "title": "Bellman-Ford Algo",
+    "slug": "",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 165
+  },
+  {
+    "id": "striver_166",
+    "title": "Floyd Warshall Algorithm",
+    "slug": "",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 166
+  },
+  {
+    "id": "striver_167",
+    "title": "MST using Prim’s Algo",
+    "slug": "",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 167
+  },
+  {
+    "id": "striver_168",
+    "title": "MST using Kruskal’s Algo",
+    "slug": "",
+    "topic": "Graphs",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 168
+  },
+  {
+    "id": "striver_169",
+    "title": "Max Product Subarray",
+    "slug": "maximum-product-subarray",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 169
+  },
+  {
+    "id": "striver_170",
+    "title": "Longest Increasing Subsequence",
+    "slug": "longest-increasing-subsequence",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 170
+  },
+  {
+    "id": "striver_171",
+    "title": "Longest Common Subsequence",
+    "slug": "longest-common-subsequence",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 171
+  },
+  {
+    "id": "striver_172",
+    "title": "0-1 Knapsack",
+    "slug": "ones-and-zeroes",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 172
+  },
+  {
+    "id": "striver_173",
+    "title": "Edit Distance",
+    "slug": "edit-distance",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 173
+  },
+  {
+    "id": "striver_174",
+    "title": "Maximum sum increasing subsequence",
+    "slug": "",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 174
+  },
+  {
+    "id": "striver_175",
+    "title": "Matrix Chain Multiplication",
+    "slug": "",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 175
+  },
+  {
+    "id": "striver_176",
+    "title": "Minimum sum path in the matrix",
+    "slug": "minimum-path-sum",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 176
+  },
+  {
+    "id": "striver_177",
+    "title": "Coin change",
+    "slug": "coin-change",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 177
+  },
+  {
+    "id": "striver_178",
+    "title": "Subset Sum",
+    "slug": "partition-equal-subset-sum",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 178
+  },
+  {
+    "id": "striver_179",
+    "title": "Rod Cutting",
+    "slug": "minimum-cost-to-cut-a-stick",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 179
+  },
+  {
+    "id": "striver_180",
+    "title": "Egg Dropping",
+    "slug": "",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 180
+  },
+  {
+    "id": "striver_181",
+    "title": "Word Break",
+    "slug": "",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 181
+  },
+  {
+    "id": "striver_182",
+    "title": "Palindrome Partitioning (MCM Variation)",
+    "slug": "",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 182
+  },
+  {
+    "id": "striver_183",
+    "title": "Maximum profit in Job scheduling",
+    "slug": "",
+    "topic": "Dynamic Programming",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 183
+  },
+  {
+    "id": "striver_184",
+    "title": "Implement Trie (Prefix Tree)",
+    "slug": "implement-trie-prefix-tree",
+    "topic": "Tries",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 184
+  },
+  {
+    "id": "striver_185",
+    "title": "Implement Trie – 2 (Prefix Tree)",
+    "slug": "",
+    "topic": "Tries",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 185
+  },
+  {
+    "id": "striver_186",
+    "title": "Longest String with All Prefixes",
+    "slug": "",
+    "topic": "Tries",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 186
+  },
+  {
+    "id": "striver_187",
+    "title": "Number of Distinct Substrings in a String",
+    "slug": "",
+    "topic": "Tries",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 187
+  },
+  {
+    "id": "striver_188",
+    "title": "Power Set",
+    "slug": "",
+    "topic": "Tries",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 188
+  },
+  {
+    "id": "striver_189",
+    "title": "Maximum XOR of two numbers in an array",
+    "slug": "maximum-xor-of-two-numbers-in-an-array",
+    "topic": "Tries",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 189
+  },
+  {
+    "id": "striver_190",
+    "title": "Maximum XOR With an Element From Array",
+    "slug": "maximum-xor-with-an-element-from-array",
+    "topic": "Tries",
+    "difficulty": "Medium",
+    "source": "striver",
+    "order": 190
+  }
+]
