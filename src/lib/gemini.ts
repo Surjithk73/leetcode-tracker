@@ -1,9 +1,9 @@
-const BASE = 'https://generativelanguage.googleapis.com/v1beta/models'
+﻿const BASE = 'https://generativelanguage.googleapis.com/v1beta/models'
 
-export const DEFAULT_MODEL = 'gemini-3.1-flash-lite-preview'
+export const DEFAULT_MODEL = 'gemini-2.0-flash-lite'
 
 export function getApiKey(): string {
-  return localStorage.getItem('gemini_api_key') ?? ''
+  return localStorage.getItem('gemini_api_key') || (import.meta.env.VITE_GEMINI_API_KEY as string) || ''
 }
 
 export function getModel(): string {
