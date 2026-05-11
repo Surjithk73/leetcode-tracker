@@ -1,8 +1,10 @@
-﻿const BASE = 'https://generativelanguage.googleapis.com/v1beta/models'
+const BASE = 'https://generativelanguage.googleapis.com/v1beta/models'
 
 export const DEFAULT_MODEL = 'gemini-2.0-flash-lite'
 
 export function getApiKey(): string {
+  // localStorage override takes priority (set via Settings page)
+  // Falls back to the build-time env var so production works out of the box
   return localStorage.getItem('gemini_api_key') || (import.meta.env.VITE_GEMINI_API_KEY as string) || ''
 }
 
