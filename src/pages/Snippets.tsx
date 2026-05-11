@@ -189,8 +189,10 @@ export default function Snippets() {
                   </div>
                 </div>
                 
-                <div className="text-xs text-muted-foreground font-mono bg-muted/20 rounded-lg p-3 mb-3 line-clamp-3">
-                  {snippet.content_markdown.split('\n').slice(0, 3).join('\n') || 'No content'}
+                <div className="prose prose-sm prose-invert max-w-none bg-muted/20 rounded-lg p-3 mb-3 line-clamp-4 overflow-hidden">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {snippet.content_markdown || '*No content*'}
+                  </ReactMarkdown>
                 </div>
                 
                 <div className="flex items-center justify-between text-xs text-muted-foreground">

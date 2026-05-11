@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Layers, ArrowRight, RotateCcw, CheckCircle, AlertCircle, ExternalLink } from 'lucide-react'
+import { Layers, ArrowRight, RotateCcw, CheckCircle, AlertCircle, ExternalLink, BookOpen } from 'lucide-react'
 import { useFlashcards } from '@/hooks/useFlashcards'
 import { useToast } from '@/hooks/useToast'
 import { toLeetCodeUrl, cn } from '@/lib/utils'
@@ -7,17 +7,30 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 export default function Flashcards() {
-  const { flashcards, loading, advanceFlashcard, rescheduleFlashcard, resetFlashcard } = useFlashcards()
+  const { flashcards, allFlashcards, loading, advanceFlashcard, rescheduleFlashcard, resetFlashcard } = useFlashcards()
   const { toast } = useToast()
   const [isReviewing, setIsReviewing] = useState(false)
+  const [practiceQueue, setPracticeQueue] = useState<typeof allFlashcards>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showBack, setShowBack] = useState(false)
   const [sessionStats, setSessionStats] = useState({ gotIt: 0, shaky: 0, missed: 0 })
-  
-  const currentCard = flashcards[currentIndex]
-  
+
+  // The active deck — either due cards or a practice queue
+  const activeDeck = practiceQueue.length > 0 ? practiceQueue : flashcards
+  const currentCard = activeDeck[currentIndex]
+
   function startReview() {
     if (flashcards.length === 0) return
+    setPracticeQueue([])
+    setIsReviewing(true)
+    setCurrentIndex(0)
+    setShowBack(false)
+    setSessionStats({ gotIt: 0, shaky: 0, missed: 0 })
+  }
+
+  function startPractice(cards: typeof allFlashcards) {
+    if (cards.length === 0) return
+    setPracticeQueue(cards)
     setIsReviewing(true)
     setCurrentIndex(0)
     setShowBack(false)
@@ -29,24 +42,26 @@ export default function Flashcards() {
     
     try {
       if (type === 'gotIt') {
-        await advanceFlashcard(currentCard)
+        // Only update DB for due cards, not practice mode
+        if (practiceQueue.length === 0) await advanceFlashcard(currentCard)
         setSessionStats(s => ({ ...s, gotIt: s.gotIt + 1 }))
         toast('+5 XP', 'success')
       } else if (type === 'shaky') {
-        await rescheduleFlashcard(currentCard)
+        if (practiceQueue.length === 0) await rescheduleFlashcard(currentCard)
         setSessionStats(s => ({ ...s, shaky: s.shaky + 1 }))
       } else {
-        await resetFlashcard(currentCard)
+        if (practiceQueue.length === 0) await resetFlashcard(currentCard)
         setSessionStats(s => ({ ...s, missed: s.missed + 1 }))
       }
       
       // Move to next card
-      if (currentIndex < flashcards.length - 1) {
+      if (currentIndex < activeDeck.length - 1) {
         setCurrentIndex(currentIndex + 1)
         setShowBack(false)
       } else {
         // Session complete
         setIsReviewing(false)
+        setPracticeQueue([])
       }
     } catch (err) {
       toast('Failed to update flashcard', 'error')
@@ -69,12 +84,13 @@ export default function Flashcards() {
           {/* Progress */}
           <div className="text-center">
             <p className="text-sm text-muted-foreground">
-              Card {currentIndex + 1} of {flashcards.length}
+              Card {currentIndex + 1} of {activeDeck.length}
+              {practiceQueue.length > 0 && <span className="ml-2 text-xs text-purple-400">(Practice Mode)</span>}
             </p>
             <div className="w-full bg-muted rounded-full h-2 mt-2">
               <div
                 className="bg-primary h-2 rounded-full transition-all"
-                style={{ width: `${((currentIndex + 1) / flashcards.length) * 100}%` }}
+                style={{ width: `${((currentIndex + 1) / activeDeck.length) * 100}%` }}
               />
             </div>
           </div>
@@ -223,12 +239,12 @@ export default function Flashcards() {
           </div>
         </div>
         
-        {/* Queue Status */}
+        {/* Due Today Queue */}
         <div className="bg-card border rounded-xl p-6">
           {flashcards.length === 0 ? (
-            <div className="text-center py-8">
+            <div className="text-center py-6">
               <CheckCircle className="w-12 h-12 text-chart-2 mx-auto mb-4" />
-              <p className="text-lg font-semibold text-foreground mb-2">All caught up!</p>
+              <p className="text-lg font-semibold text-foreground mb-1">All caught up!</p>
               <p className="text-sm text-muted-foreground">No flashcards due for review today</p>
             </div>
           ) : (
@@ -273,6 +289,67 @@ export default function Flashcards() {
             </div>
           )}
         </div>
+
+        {/* Practice Library — all cards regardless of due date */}
+        {allFlashcards.length > 0 && (
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4 text-muted-foreground" />
+                <h2 className="text-sm font-semibold text-foreground">Practice Library</h2>
+                <span className="text-xs text-muted-foreground">({allFlashcards.length} cards)</span>
+              </div>
+              <button
+                onClick={() => startPractice(allFlashcards)}
+                className="px-4 py-1.5 border border-border rounded-lg text-xs font-medium text-muted-foreground hover:text-foreground hover:border-muted-foreground transition-colors flex items-center gap-1.5"
+              >
+                Practice All <ArrowRight className="w-3 h-3" />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {allFlashcards.map(card => {
+                const isDue = flashcards.some(f => f.id === card.id)
+                return (
+                  <div
+                    key={card.id}
+                    className="bg-card border rounded-xl p-4 flex items-center justify-between gap-3 hover:border-primary/40 transition-colors group"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className={cn(
+                          'text-xs px-2 py-0.5 rounded-full shrink-0',
+                          card.type === 'question' ? 'bg-blue-500/10 text-blue-400' : 'bg-purple-500/10 text-purple-400'
+                        )}>
+                          {card.type === 'question' ? 'Q' : 'Snippet'}
+                        </span>
+                        {isDue && (
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-chart-3/10 text-chart-3 shrink-0">Due</span>
+                        )}
+                        <span className="text-xs text-muted-foreground shrink-0">Touch {card.touch_number}</span>
+                      </div>
+                      <p className="text-sm font-medium text-foreground truncate">{card.front}</p>
+                    </div>
+                    <button
+                      onClick={() => startPractice([card])}
+                      className="shrink-0 px-3 py-1.5 rounded-lg border border-border text-xs text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors opacity-0 group-hover:opacity-100"
+                    >
+                      Practice
+                    </button>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Empty state when no cards at all */}
+        {allFlashcards.length === 0 && !loading && (
+          <div className="bg-card border border-dashed rounded-xl p-8 text-center">
+            <Layers className="w-10 h-10 text-muted-foreground mx-auto mb-3 opacity-40" />
+            <p className="text-sm text-muted-foreground">No flashcards yet — log questions with notes or create code snippets to build your deck.</p>
+          </div>
+        )}
         
       </div>
     </div>
