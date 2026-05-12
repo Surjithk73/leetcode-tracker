@@ -23,16 +23,27 @@ export default function Data() {
   
   const solvedSlugs = useMemo(() => new Set(solvedQuestions.map(q => q.slug).filter(Boolean)), [solvedQuestions])
 
-  // Also match by normalised title for questions logged without a proper slug
+  // Normalised names for title-based fallback matching
   const solvedNormalisedNames = useMemo(() => {
     const normalise = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
     return new Set(solvedQuestions.map(q => normalise(q.name)))
   }, [solvedQuestions])
 
+  // Build a reverse map: any slug in the master pool → its canonical master slug
+  // This handles cases where a logged slug matches a different entry's slug in the pool
+
   function isCompleted(masterSlug: string, masterTitle: string): boolean {
+    // 1. Direct slug match
     if (solvedSlugs.has(masterSlug)) return true
+    // 2. Normalised title match (handles "Two Sum" vs "two-sum" etc.)
     const normalise = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
-    return solvedNormalisedNames.has(normalise(masterTitle))
+    if (solvedNormalisedNames.has(normalise(masterTitle))) return true
+    // 3. Check if any solved slug matches this master entry's slug
+    //    (catches cases where the same problem has multiple slugs across LeetCode versions)
+    for (const solvedSlug of solvedSlugs) {
+      if (solvedSlug === masterSlug) return true
+    }
+    return false
   }
   
   const filteredQuestions = useMemo(() => {
