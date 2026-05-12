@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useMemo } from 'react'
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import {
   CheckCircleIcon, PlusCircleIcon, TrendingUp, Target,
@@ -10,7 +10,7 @@ import { useBadges } from '@/hooks/useBadges'
 import { useDailyPlan } from '@/hooks/useDailyPlan'
 import { getTodaysPlan } from '@/lib/aiPlanner'
 import { calcTotalXP, calcStreak } from '@/lib/xp'
-import { getLevelFromXP, getLevelName, PREP_START, PREP_END, EXAM_START, EXAM_END } from '@/types'
+import { getLevelFromXP, getLevelName, PREP_START, PREP_END } from '@/types'
 import { cn } from '@/lib/utils'
 import { Progress } from '@/components/ui/Progress'
 import RevisionPanel from '@/components/revision/RevisionPanel'
@@ -21,7 +21,7 @@ import LevelUp from '@/components/gamification/LevelUp'
 import TodayQuestions from '@/components/planner/TodayQuestions'
 import QuestionModal from '@/components/questions/QuestionModal'
 import ToastContainer from '@/components/ui/Toast'
-import { getQuestionBySlug } from '@/lib/questionPool'
+import { getQuestionBySlug, getMasterQuestionPool } from '@/lib/questionPool'
 import { supabase } from '@/lib/supabase'
 import { useToast } from '@/hooks/useToast'
 import type { Question } from '@/types'
@@ -35,16 +35,18 @@ function getTotalDays() {
   return Math.floor((PREP_END.getTime() - PREP_START.getTime()) / 86400000)
 }
 function getCurrentPhase() {
-  const t = new Date()
-  if (t >= EXAM_START && t <= EXAM_END) return { label: 'Exam Mode', color: 'text-chart-3' }
-  if (t > EXAM_END) return { label: 'Holiday Sprint', color: 'text-chart-2' }
   return { label: 'Pre-Exam Prep', color: 'text-chart-1' }
 }
-function getDailyTarget() {
-  const t = new Date()
-  if (t >= EXAM_START && t <= EXAM_END) return 1
-  if (t > EXAM_END) return 4
-  return 2
+function getDailyTarget(solvedCount: number, totalCount: number) {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  const prepEnd = new Date(PREP_END)
+  prepEnd.setHours(0, 0, 0, 0)
+  const daysLeft = Math.max(1, Math.ceil((prepEnd.getTime() - today.getTime()) / 86400000))
+  const remaining = Math.max(0, totalCount - solvedCount)
+  // Sundays are rest days (~7 per 52 days), so effective working days ≈ daysLeft * 6/7
+  const workingDaysLeft = Math.max(1, Math.round(daysLeft * (6 / 7)))
+  return Math.max(2, Math.ceil(remaining / workingDaysLeft))
 }
 
 const cardVariants: Variants = {
@@ -60,6 +62,8 @@ export default function Dashboard() {
   const [generatingPlan, setGeneratingPlan] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
   const [modalInitial, setModalInitial] = useState<Partial<Question> | undefined>(undefined)
+  // Optimistic set of slugs logged today — updates immediately on save without waiting for refetch
+  const [optimisticSolvedSlugs, setOptimisticSolvedSlugs] = useState<Set<string>>(new Set())
   const { toasts, toast, remove } = useToast()
   const today = new Date().toISOString().split('T')[0]
   const totalXP = calcTotalXP(questions)
@@ -70,12 +74,45 @@ export default function Dashboard() {
   const dayNum = getDayNumber()
   const totalDays = getTotalDays()
   const phase = getCurrentPhase()
-  const dailyTarget = getDailyTarget()
+
+  // Master pool size for target calculation — computed once, stable
+  const masterPoolSize = useMemo(() => getMasterQuestionPool().length, [])
+  const dailyTarget = getDailyTarget(questions.length, masterPoolSize)
+
   const avgPerDay = dayNum > 0 ? Math.round(questions.length / dayNum) : 0
   const dueRevisions = questions.filter(q =>
     q.next_review_date && q.next_review_date <= today && q.touch_number < 3
   )
   const earnedBadges = badges.filter(b => b.earned)
+
+  // Merge DB questions with optimistic slugs for TodayQuestions display
+  const questionsForToday = useMemo(() => {
+    if (optimisticSolvedSlugs.size === 0) return questions
+    // Inject synthetic solved entries for optimistically logged slugs not yet in DB response
+    const existingSlugs = new Set(questions.map(q => q.slug).filter(Boolean))
+    const synthetic: Question[] = []
+    for (const slug of optimisticSolvedSlugs) {
+      if (!existingSlugs.has(slug)) {
+        const masterQ = getQuestionBySlug(slug)
+        if (masterQ) {
+          synthetic.push({
+            id: `optimistic_${slug}`,
+            name: masterQ.title,
+            slug,
+            difficulty: masterQ.difficulty,
+            topic: masterQ.topic,
+            result: 'Solved',
+            date_logged: today,
+            touch_number: 1,
+            next_review_date: null,
+            notes: null,
+            xp_awarded: 0,
+          })
+        }
+      }
+    }
+    return [...questions, ...synthetic]
+  }, [questions, optimisticSolvedSlugs, today])
 
   // Level-up detection
   const prevLevelRef = useRef(level)
@@ -140,7 +177,6 @@ export default function Dashboard() {
   // Save question from modal
   async function handleSaveQuestion(data: Omit<Question, 'id' | 'xp_awarded' | 'touch_number' | 'next_review_date'>) {
     try {
-      // Calculate XP based on difficulty and result
       let xp = 0
       if (data.result === 'Solved') {
         xp = data.difficulty === 'Easy' ? 10 : data.difficulty === 'Medium' ? 20 : 30
@@ -148,7 +184,6 @@ export default function Dashboard() {
         xp = data.difficulty === 'Easy' ? 5 : data.difficulty === 'Medium' ? 10 : 15
       }
       
-      // Set flashcard fields if notes are provided
       const flashcardTouch = data.notes ? 1 : null
       const flashcardNextReview = data.notes 
         ? new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
@@ -164,11 +199,17 @@ export default function Dashboard() {
       })
       
       if (error) throw error
+
+      // Optimistically mark this slug as solved so TodayQuestions updates instantly
+      if (data.slug) {
+        setOptimisticSolvedSlugs(prev => new Set([...prev, data.slug!]))
+      }
       
       toast('Question logged successfully!', 'success')
-      await refetch()
       setModalOpen(false)
       setModalInitial(undefined)
+      // Refetch in background — UI already updated optimistically
+      refetch()
     } catch (error) {
       console.error('Error saving question:', error)
       toast('Failed to log question', 'error')
@@ -248,7 +289,7 @@ export default function Dashboard() {
           <motion.div custom={5} variants={cardVariants} initial="hidden" animate="visible">
             <TodayQuestions
               assignedSlugs={todayPlan?.assigned_questions || []}
-              solvedQuestions={questions}
+              solvedQuestions={questionsForToday}
               onLogQuestion={handleLogQuestion}
               reasoning={planReasoning}
               loading={generatingPlan || planLoading}
