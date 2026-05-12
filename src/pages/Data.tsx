@@ -22,6 +22,18 @@ export default function Data() {
   const currentPool = activeTab === 'all' ? allQuestions : activeTab === 'neetcode' ? neetcodeQuestions : striverQuestions
   
   const solvedSlugs = useMemo(() => new Set(solvedQuestions.map(q => q.slug).filter(Boolean)), [solvedQuestions])
+
+  // Also match by normalised title for questions logged without a proper slug
+  const solvedNormalisedNames = useMemo(() => {
+    const normalise = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
+    return new Set(solvedQuestions.map(q => normalise(q.name)))
+  }, [solvedQuestions])
+
+  function isCompleted(masterSlug: string, masterTitle: string): boolean {
+    if (solvedSlugs.has(masterSlug)) return true
+    const normalise = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
+    return solvedNormalisedNames.has(normalise(masterTitle))
+  }
   
   const filteredQuestions = useMemo(() => {
     return currentPool.filter(q => {
@@ -33,15 +45,15 @@ export default function Data() {
         if (sourceFilter === 'Striver' && !q.source.includes('striver')) return false
       }
       if (statusFilter !== 'All') {
-        const isCompleted = solvedSlugs.has(q.slug)
-        if (statusFilter === 'Completed' && !isCompleted) return false
-        if (statusFilter === 'Pending' && isCompleted) return false
+        const completed = isCompleted(q.slug, q.title)
+        if (statusFilter === 'Completed' && !completed) return false
+        if (statusFilter === 'Pending' && completed) return false
       }
       return true
     })
-  }, [currentPool, topicFilter, difficultyFilter, sourceFilter, statusFilter, solvedSlugs])
+  }, [currentPool, topicFilter, difficultyFilter, sourceFilter, statusFilter, solvedSlugs, solvedNormalisedNames])
   
-  const completedCount = currentPool.filter(q => solvedSlugs.has(q.slug)).length
+  const completedCount = currentPool.filter(q => isCompleted(q.slug, q.title)).length
   const totalCount = currentPool.length
   const completionPercent = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0
   
@@ -187,7 +199,7 @@ export default function Data() {
               </thead>
               <tbody className="divide-y divide-border">
                 {filteredQuestions.map((q, idx) => {
-                  const isCompleted = solvedSlugs.has(q.slug)
+                  const completed = isCompleted(q.slug, q.title)
                   return (
                     <tr key={q.id} className="hover:bg-muted/10 transition-colors">
                       <td className="px-4 py-3 text-sm text-muted-foreground">{idx + 1}</td>
@@ -231,9 +243,9 @@ export default function Data() {
                       <td className="px-4 py-3">
                         <span className={cn(
                           'text-xs px-2 py-1 rounded-md font-medium',
-                          isCompleted ? 'bg-chart-2/10 text-chart-2' : 'bg-muted text-muted-foreground'
+                          completed ? 'bg-chart-2/10 text-chart-2' : 'bg-muted text-muted-foreground'
                         )}>
-                          {isCompleted ? 'Completed' : 'Pending'}
+                          {completed ? 'Completed' : 'Pending'}
                         </span>
                       </td>
                     </tr>
