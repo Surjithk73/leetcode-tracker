@@ -250,7 +250,7 @@ export async function saveDailyPlan(plan: DailyPlan): Promise<void> {
       status: 'On Track',
       manually_modified: false
     }, {
-      onConflict: 'date'
+      onConflict: 'user_id,date'
     })
   
   if (error) {

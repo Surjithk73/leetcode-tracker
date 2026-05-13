@@ -61,7 +61,7 @@ export async function executeAction(action: AIAction): Promise<string> {
 
     case 'update_setting': {
       const { key, value } = action.data as { key: string; value: string }
-      await supabase.from('settings').upsert({ key, value }, { onConflict: 'key' })
+      await supabase.from('settings').upsert({ key, value }, { onConflict: 'user_id,key' })
       return `✅ Setting "${key}" updated`
     }
 

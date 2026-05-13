@@ -18,7 +18,7 @@ export function useCheatSheets() {
   async function upsert(topic: Topic, raw_notes: string, formatted_markdown?: string) {
     await supabase.from('cheat_sheets').upsert(
       { topic, raw_notes, formatted_markdown: formatted_markdown ?? null, last_edited: new Date().toISOString() },
-      { onConflict: 'topic' }
+      { onConflict: 'user_id,topic' }
     )
     fetch()
   }

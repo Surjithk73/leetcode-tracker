@@ -37,12 +37,12 @@ export function useDailyPlan() {
   async function updateTodayPlan(updates: Partial<PlanDay>) {
     const today = new Date().toISOString().split('T')[0]
     
-    const { error } = await supabase
-      .from('plan')
-      .upsert({
-        date: today,
-        ...updates,
-      })
+const { error } = await supabase
+        .from('plan')
+        .upsert({
+          date: today,
+          ...updates,
+        }, { onConflict: 'user_id,date' })
     
     if (error) {
       console.error('Error updating today plan:', error)

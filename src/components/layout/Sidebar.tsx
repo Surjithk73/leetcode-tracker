@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom'
 import {
   LayoutDashboard, BookOpen, CalendarDays,
   FileText, MessageSquare, Settings, ChevronLeft, Zap, Building2,
-  Database, Code, Layers,
+  Database, Code, Layers, LogOut,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useAuth } from '@/hooks/useAuth'
 
 const NAV_ITEMS = [
   { to: '/',            icon: LayoutDashboard, label: 'Dashboard' },
@@ -22,6 +23,9 @@ const NAV_ITEMS = [
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false)
+  const { user, signOut } = useAuth()
+  const email = user?.email ?? ''
+  const initial = email.charAt(0).toUpperCase()
 
   return (
     <aside
@@ -64,16 +68,46 @@ export default function Sidebar() {
       </nav>
 
       {/* Collapse toggle */}
-      <button
-        onClick={() => setCollapsed(!collapsed)}
-        className="flex items-center justify-center gap-2 px-4 py-4 border-t border-sidebar-border text-muted-foreground hover:text-sidebar-foreground transition-colors text-sm"
-      >
-        <ChevronLeft
-          size={16}
-          className={cn('transition-transform duration-300', collapsed && 'rotate-180')}
-        />
-        {!collapsed && <span>Collapse</span>}
-      </button>
+      <div className="border-t border-sidebar-border">
+        {!collapsed && (
+          <div className="flex items-center gap-3 px-4 py-3">
+            <div className="w-7 h-7 rounded-full bg-sidebar-primary flex items-center justify-center text-xs font-bold text-sidebar-primary-foreground shrink-0">
+              {initial}
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-sm font-medium text-sidebar-foreground truncate">{email}</p>
+            </div>
+            <button
+              onClick={signOut}
+              className="text-muted-foreground hover:text-sidebar-foreground transition-colors shrink-0"
+              title="Log out"
+            >
+              <LogOut size={16} />
+            </button>
+          </div>
+        )}
+        {collapsed && (
+          <div className="flex items-center justify-center py-3 gap-2">
+            <button
+              onClick={signOut}
+              className="text-muted-foreground hover:text-sidebar-foreground transition-colors"
+              title="Log out"
+            >
+              <LogOut size={16} />
+            </button>
+          </div>
+        )}
+        <button
+          onClick={() => setCollapsed(!collapsed)}
+          className="flex items-center justify-center gap-2 px-4 py-4 border-t border-sidebar-border text-muted-foreground hover:text-sidebar-foreground transition-colors text-sm"
+        >
+          <ChevronLeft
+            size={16}
+            className={cn('transition-transform duration-300', collapsed && 'rotate-180')}
+          />
+          {!collapsed && <span>Collapse</span>}
+        </button>
+      </div>
     </aside>
   )
 }

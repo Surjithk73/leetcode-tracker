@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Eye, EyeOff, Save, Download } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
 import { useQuestions } from '@/hooks/useQuestions'
+import { useAuth } from '@/hooks/useAuth'
+import { encrypt } from '@/lib/encryption'
 import { useToast } from '@/hooks/useToast'
 import ToastContainer from '@/components/ui/Toast'
 import { DEFAULT_MODEL } from '@/lib/gemini'
@@ -36,6 +38,7 @@ const DB_SETTINGS: SettingField[] = [
 
 export default function Settings() {
   const { questions } = useQuestions()
+  const { user } = useAuth()
   const { toasts, toast, remove } = useToast()
   const [geminiKey, setGeminiKey] = useState('')
   const [showKey, setShowKey] = useState(false)
@@ -71,10 +74,23 @@ export default function Settings() {
     localStorage.setItem('gemini_api_key', geminiKey.trim())
     if (resolvedModel) localStorage.setItem('gemini_model', resolvedModel)
 
-    // Save DB settings
-    const upserts = Object.entries(dbSettings).map(([key, value]) => ({ key, value }))
+    if (user?.id && geminiKey.trim()) {
+      try {
+        const encryptedKey = await encrypt(geminiKey.trim(), user.id)
+        const { error: keyError } = await supabase
+          .from('settings')
+          .upsert({ key: 'gemini_api_key', value: encryptedKey }, { onConflict: 'user_id,key' })
+        if (keyError) console.error('Failed to save encrypted key:', keyError)
+      } catch (e) {
+        console.error('Encryption failed:', e)
+      }
+    }
+
+    const upserts = Object.entries(dbSettings)
+      .filter(([key]) => key !== 'gemini_api_key')
+      .map(([key, value]) => ({ key, value }))
     if (upserts.length > 0) {
-      const { error } = await supabase.from('settings').upsert(upserts, { onConflict: 'key' })
+      const { error } = await supabase.from('settings').upsert(upserts, { onConflict: 'user_id,key' })
       if (error) { toast(error.message, 'error'); setSaving(false); return }
     }
     toast('Settings saved')
@@ -130,7 +146,7 @@ export default function Settings() {
               </button>
             </div>
           </div>
-          <p className="text-xs text-muted-foreground">Stored in browser localStorage only — never sent to Supabase.</p>
+          <p className="text-xs text-muted-foreground">Stored encrypted in your account and locally in this browser.</p>
         </div>
         <div className="space-y-1.5">
           <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Model</label>
